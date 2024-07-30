@@ -14,12 +14,7 @@ abstract class CommonGateway extends AbstractGateway
 {
     protected PayMethod $payMethod;
 
-    /**
-     * @param  PayMethod  $payMethod
-     * @param  ?ClientInterface  $httpClient
-     * @param  ?SymfonyRequest  $httpRequest
-     */
-    public function __construct(PayMethod $payMethod, ClientInterface $httpClient = null, SymfonyRequest $httpRequest = null)
+    public function __construct(PayMethod $payMethod, ?ClientInterface $httpClient = null, ?SymfonyRequest $httpRequest = null)
     {
         $this->payMethod = $payMethod;
 
@@ -28,8 +23,6 @@ abstract class CommonGateway extends AbstractGateway
 
     /**
      * Get the default parameters of the gateway channel.
-     *
-     * @return array
      */
     public function getDefaultParameters(): array
     {

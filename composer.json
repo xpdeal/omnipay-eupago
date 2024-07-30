@@ -6,10 +6,12 @@
         "omnipay/common": "^3.2",
         "symfony/http-client": "^6.3",
         "php-http/httplug": "^2.4",
-        "nyholm/psr7": "^1.8"
+        "nyholm/psr7": "^1.8",
+        "psr/http-factory": "^1.1"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-latest"
+        "roave/security-advisories": "dev-latest",
+        "nunomaduro/phpinsights": "^2.11"
     },
     "license": "MIT",
     "autoload": {
@@ -19,13 +21,14 @@
     },
     "authors": [
         {
-            "name": "rafaeltpires",
-            "email": "me@rafaeltpires.dev"
+            "name": "Jordan Carvalho",
+            "email": "jordan@xpdeal.com"
         }
     ],
     "config": {
         "allow-plugins": {
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     }
 }

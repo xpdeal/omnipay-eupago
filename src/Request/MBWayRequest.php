@@ -14,38 +14,26 @@ use Symfony\Component\HttpFoundation\Request;
  */
 final class MBWayRequest extends AbstractRequest
 {
-    private const SANDBOX_BASE_URL            = 'https://sandbox.eupago.pt';
+    private const SANDBOX_BASE_URL = 'https://sandbox.eupago.pt';
     private const PRODUCTION_BASE_URL = 'https://clientes.eupago.pt';
-    private const ENDPOINT   = 'clientes/rest_api/mbway/create';
+    private const ENDPOINT = 'clientes/rest_api/mbway/create';
     private const MEDIA_TYPE = 'application/json';
 
-    /**
-     * @param  string  $value
-     * @return self
-     */
-    public function setPaymentPhone($value): self
+    public function setPaymentPhone(string $value): self
     {
-        if (mb_strlen($value) != 9) {
+        if (mb_strlen($value) !== 9) {
             throw new LengthException('The phone number value must have 9 characters');
         }
 
         return $this->setParameter('paymentPhone', $value);
     }
 
-    /**
-     * @return string
-     */
-    public function getPaymentPhone() : string
+    public function getPaymentPhone(): string
     {
         return $this->getParameter('paymentPhone');
     }
 
-
-    /**
-     * @param  string  $value
-     * @return self
-     */
-    public function setDescription($value): self
+    public function setDescription(string $value): self
     {
         if (mb_strlen($value) > 50) {
             throw new LengthException('The description value must not exceed 50 characters');
@@ -55,7 +43,6 @@ final class MBWayRequest extends AbstractRequest
     }
 
     /**
-     * @return array
      * @throws InvalidRequestException
      */
     public function getData(): array
@@ -68,24 +55,19 @@ final class MBWayRequest extends AbstractRequest
         );
 
         return [
-            'chave'   => $this->getKey(),
-            'valor'      => (float)$this->getAmount(),
+            'chave' => $this->getKey(),
+            'valor' => (float) $this->getAmount(),
             'id' => $this->getId(),
-            'alias'    => $this->getPaymentPhone(),
-            'descricao'  => $this->getDescription(),
-            'contacto'      => $this->getClientPhone(),
-            'email'      => $this->getClientEmail(),
-            'failOver'  => $this->getFailOver()
+            'alias' => $this->getPaymentPhone(),
+            'descricao' => $this->getDescription(),
+            'contacto' => $this->getClientPhone(),
+            'email' => $this->getClientEmail(),
+            'failOver' => $this->getFailOver(),
         ];
     }
 
-    /**
-     * @param  mixed  $data
-     * @return MBWayResponse
-     */
-    public function sendData($data): MBWayResponse
+    public function sendData(mixed $data): MBWayResponse
     {
-
         $headers = [
             'Content-Type' => self::MEDIA_TYPE,
         ];

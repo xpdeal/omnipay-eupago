@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Omnipay\EuPago\Response;
 
-use DateTimeImmutable;
 use Omnipay\Common\Message\AbstractResponse;
 
 final class MultibancoResponse extends AbstractResponse
@@ -13,8 +12,6 @@ final class MultibancoResponse extends AbstractResponse
 
     /**
      * The amount being charged.
-     *
-     * @return ?string
      */
     public function getAmount(): ?string
     {
@@ -23,8 +20,6 @@ final class MultibancoResponse extends AbstractResponse
 
     /**
      * Is the response successful?
-     *
-     * @return boolean
      */
     public function isSuccessful(): bool
     {
@@ -33,8 +28,6 @@ final class MultibancoResponse extends AbstractResponse
 
     /**
      * Multibanco payment entity.
-     *
-     * @return ?string
      */
     public function getEntity(): ?string
     {
@@ -43,8 +36,6 @@ final class MultibancoResponse extends AbstractResponse
 
     /**
      * Multibanco payment reference.
-     *
-     * @return ?string
      */
     public function getReference(): ?string
     {
@@ -53,8 +44,6 @@ final class MultibancoResponse extends AbstractResponse
 
     /**
      * Multibanco payment max value.
-     *
-     * @return ?string
      */
     public function getMaxValue(): ?string
     {
@@ -63,8 +52,6 @@ final class MultibancoResponse extends AbstractResponse
 
     /**
      * Multibanco payment min value.
-     *
-     * @return ?string
      */
     public function getMinValue(): ?string
     {
@@ -73,8 +60,6 @@ final class MultibancoResponse extends AbstractResponse
 
     /**
      * Multibanco payment end date
-     *
-     * @return ?string
      */
     public function getEndDate(): ?string
     {
@@ -83,12 +68,9 @@ final class MultibancoResponse extends AbstractResponse
 
     /**
      * Multibanco payment start date
-     *
-     * @return ?string
      */
     public function getStartDate(): ?string
     {
         return $this->data['data_inicio'] ?? null;
     }
-
 }

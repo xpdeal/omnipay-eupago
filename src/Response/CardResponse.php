@@ -8,11 +8,8 @@ use Omnipay\Common\Message\AbstractResponse;
 
 final class CardResponse extends AbstractResponse
 {
-
     /**
      * The Gateway's transaction ID.
-     *
-     * @return ?string
      */
     public function getTransactionId(): ?string
     {
@@ -25,8 +22,6 @@ final class CardResponse extends AbstractResponse
 
     /**
      * The Gateway's reference.
-     *
-     * @return ?string
      */
     public function getReference(): ?string
     {
@@ -39,18 +34,14 @@ final class CardResponse extends AbstractResponse
 
     /**
      * Is the response successful?
-     *
-     * @return boolean
      */
     public function isSuccessful(): bool
     {
-        return isset($this->data['transactionStatus']) && $this->data['transactionStatus'] == 'Success';
+        return isset($this->data['transactionStatus']) && $this->data['transactionStatus'] === 'Success';
     }
 
     /**
      * Payment gateway redirect URL.
-     *
-     * @return ?string
      */
     public function getRedirectUrl(): ?string
     {
@@ -59,8 +50,6 @@ final class CardResponse extends AbstractResponse
 
     /**
      * Is the response a redirect?
-     *
-     * @return boolean
      */
     public function isRedirect(): bool
     {

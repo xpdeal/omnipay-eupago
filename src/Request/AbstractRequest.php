@@ -12,43 +12,26 @@ abstract class AbstractRequest extends BaseAbstractRequest
 {
     protected $zeroAmountAllowed = false;
 
-    /**
-     * @return ?string
-     */
     public function getKey(): ?string
     {
         return $this->getParameter('key');
     }
 
-    /**
-     * @param  string  $value
-     * @return self
-     */
     public function setKey(string $value): self
     {
         return $this->setParameter('key', $value);
     }
 
-    /**
-     * @return ?string
-     */
     public function getReference(): ?string
     {
         return $this->getParameter('reference');
     }
 
-    /**
-     * @return ?string
-     */
     public function getClientPhone(): ?string
     {
         return $this->getParameter('clientPhone');
     }
 
-    /**
-     * @param  string  $value
-     * @return self
-     */
     public function setClientPhone(string $value): self
     {
         if (mb_strlen($value) > 200) {
@@ -58,18 +41,11 @@ abstract class AbstractRequest extends BaseAbstractRequest
         return $this->setParameter('clientPhone', $value);
     }
 
-    /**
-     * @return ?string
-     */
     public function getClientEmail(): ?string
     {
         return $this->getParameter('clientEmail');
     }
 
-    /**
-     * @param  string  $value
-     * @return self
-     */
     public function setClientEmail(string $value): self
     {
         if (mb_strlen($value) > 200) {
@@ -83,10 +59,6 @@ abstract class AbstractRequest extends BaseAbstractRequest
         return $this->setParameter('clientEmail', $value);
     }
 
-    /**
-     * @param  string  $value
-     * @return self
-     */
     public function setId(string $value): self
     {
         if (mb_strlen($value) > 200) {
@@ -96,36 +68,23 @@ abstract class AbstractRequest extends BaseAbstractRequest
         return $this->setParameter('id', $value);
     }
 
-    /**
-     * @return ?string
-     */
     public function getId(): ?string
     {
         return $this->getParameter('id');
     }
 
-    /**
-     * @param  int  $value
-     * @return self
-     */
     public function setFailOver(int $value): self
     {
         return $this->setParameter('failOver', $value);
     }
 
-    /**
-     * @return ?int
-     */
     public function getFailOver(): ?int
     {
         return $this->getParameter('failOver');
     }
 
-
     /**
-     * @param  string  $baseURL
      * @param  string  ...$path
-     * @return string
      */
     protected function buildURL(string $baseURL, mixed ...$path): string
     {

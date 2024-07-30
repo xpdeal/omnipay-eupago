@@ -4,16 +4,12 @@ declare(strict_types=1);
 
 namespace Omnipay\EuPago\Response;
 
-use DateTimeImmutable;
 use Omnipay\Common\Message\AbstractResponse;
 
 final class MBWayResponse extends AbstractResponse
 {
-
     /**
      * The amount being charged.
-     *
-     * @return ?string
      */
     public function getAmount(): ?string
     {
@@ -22,8 +18,6 @@ final class MBWayResponse extends AbstractResponse
 
     /**
      * Payment gateway response reference.
-     *
-     * @return ?int
      */
     public function getReference(): ?int
     {
@@ -32,8 +26,6 @@ final class MBWayResponse extends AbstractResponse
 
     /**
      * Payment gateway response message.
-     *
-     * @return ?string
      */
     public function getMessage(): ?string
     {
@@ -42,12 +34,9 @@ final class MBWayResponse extends AbstractResponse
 
     /**
      * Is the response successful?
-     *
-     * @return boolean
      */
     public function isSuccessful(): bool
     {
         return $this->data['sucesso'];
     }
-
 }

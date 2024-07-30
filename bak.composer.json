@@ -1,5 +1,5 @@
 {
-  "name": "rafaeltpires/omnipay-eupago",
+  "name": "xpdeal/omnipay-eupago",
   "type": "library",
   "description": "EuPago driver for the Omnipay Multi-Gateway payment processing library",
   "keywords": [
@@ -12,12 +12,12 @@
     "mbway",
     "multibanco"
   ],
-  "homepage": "https://github.com/rafaelpires/omnipay-eupago",
+  "homepage": "https://github.com/xpdeal/omnipay-eupago",
   "license": "MIT",
   "authors": [
     {
-      "name": "Rafael Pires",
-      "email": "me@rafaeltpires.dev"
+      "name": "Jordan Carvalho",
+      "email": "jordan@xpdeal.com"
     }
   ],
   "autoload": {
