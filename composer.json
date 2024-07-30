@@ -1,5 +1,5 @@
 {
-    "name": "rafaeltpires/omnipay-eupago",
+    "name": "xpdeal/omnipay-eupago",
     "description": "EuPago driver for Omnipay payment processing library",
     "type": "library",
     "require": {
